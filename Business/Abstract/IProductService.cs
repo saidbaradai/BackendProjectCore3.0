@@ -8,11 +8,11 @@ namespace Business.Abstract
 {
     public interface IProductService
     {
-        Product GetById(int productId);
-        List<Product> GetList();
-        List<Product> GetByCategory(int categoryId);
-        void Add(Product product);
-        void Update(Product product);
-        void Delete(Product product);
+        IDataResult<Product> GetById(int productId);
+        IDataResult<List<Product>> GetList();
+        IDataResult<List<Product>> GetByCategory(int categoryId);
+        IResult Add(Product product);
+        IResult Update(Product product);
+        IResult Delete(Product product);
     }
 }
