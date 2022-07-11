@@ -12,7 +12,7 @@ namespace Core.Utilities.Results
 
         public Result(bool isSuccess)
         {
-            isSuccess = IsSuccess;
+            IsSuccess=isSuccess;
         }
 
         public Result(bool isSuccess, string message) : this(isSuccess)
