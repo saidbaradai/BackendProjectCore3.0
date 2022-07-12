@@ -7,7 +7,7 @@ using System.Text;
 namespace Core.DataAccess
 {
     // the class keywork here refer to a "Referece" type, not class specificlly
-    public interface IEntityRrpository<T> where T : class, IEntity, new()
+    public interface IEntityRepository<T> where T : class, IEntity, new()
     {
         T Get(Expression<Func<T, bool>> filter);
         IList<T> GetList(Expression<Func<T, bool>> filter=null);
