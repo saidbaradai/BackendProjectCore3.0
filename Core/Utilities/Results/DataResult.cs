@@ -18,5 +18,12 @@ namespace Core.Utilities.Results
             Data = data;
         }
 
+
+
+
+
+
+
+
     }
 }
