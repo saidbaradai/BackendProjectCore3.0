@@ -38,10 +38,10 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Product>>(_productDal.GetList().ToList());
         }
 
-       // [ValidatorAspect(typeof(ProductValidator))]
+       [ValidatorAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
-            ValidationTool.Validate(new ProductValidator(), product);
+
             _productDal.Add(product);
             return new SuccessResult(Messages.ProductAdded);
         }
