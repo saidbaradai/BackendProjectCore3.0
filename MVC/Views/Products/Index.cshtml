@@ -1,0 +1,31 @@
+﻿@model List<Entities.Concrete.Product>
+
+<h2>
+    Products list
+</h2>
+
+
+    @Html.ActionLink("Add anew product","Add")
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity Per Unit</th>
+            <th>Units In Stock</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.ProductName</td>
+                <td>@p.QuantityPerUnit</td>
+                <td>@p.UnitsInStock</td>
+                <td>@p.UnitPrice</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
