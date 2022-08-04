@@ -1,14 +1,22 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 using Business.Abstract;
 using Business.Concrete;
+using Business.DependencyResolvers.Aoutofac;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntityFramework;
+using MVC;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IProductService, ProductManager>();
-builder.Services.AddScoped<IProductDal, EfProductDal>();
+//builder.Services.AddScoped<IProductService, ProductManager>();
+//builder.Services.AddScoped<IProductDal, EfProductDal>();
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+builder.Host.ConfigureContainer<ContainerBuilder>(builder => builder.RegisterModule(new AutofacBusinessModule()));
 
 var app = builder.Build();
 
@@ -32,3 +40,5 @@ app.MapControllerRoute(
     pattern: "{controller=products}/{action=Index}/{id?}");
 
 app.Run();
+
+

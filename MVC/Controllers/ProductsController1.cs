@@ -48,7 +48,7 @@ namespace MVC.Controllers
 
         public IActionResult Details(int id)
         {
-            return View(res);
+            return View();
 
         }
 
