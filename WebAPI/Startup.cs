@@ -47,7 +47,7 @@ namespace WebAPI
                         ValidateIssuerSigningKey = true,
                         ValidIssuer = tokenoptions.Issuer,
                         ValidAudience = tokenoptions.Audience,
-                        IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenoptions.Issuer)
+                        IssuerSigningKey = SecurityKeyHelper.CreateSecurityKey(tokenoptions.SecurityKey)
 
                     };
                     
